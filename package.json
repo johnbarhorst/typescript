@@ -3,7 +3,7 @@
     "parcel-plugin-typescript": "^1.0.0",
     "typescript": "^3.8.3"
   },
-  "name": "typescript",
+  "name": "typescriptlearning",
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
