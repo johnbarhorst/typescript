@@ -22,6 +22,37 @@ const profile: object = {
   phone: 6515552525,
 }
 
+// Variable variables and implicit types
+
+let lastName = 'Barhorst';
+lastName = 'Anastasi';
+
+// TS knows the original was a string, so if you later try to assign it as a number
+// there will be an error.
+
+// lastName = 34;
+
+// Types can be inherited, no need to declare it here.
+let doppleganger = lastName;
+// doppleganger = 34;  <-- would cause an error, since lastName is an implicit string.
+
+// IF YOU MUST ALLOW A VARIABLE TO CHANGE TYPE! (Pro tip, probably don't)
+// Use type of any
+let changeable: any = 'Steven McBadCode';
+changeable = 69;
+
+// Even better, set Union types
+
+let unionChangeable: string | number | boolean = 'Jimmy VonBetterOption';
+unionChangeable = 42;
+unionChangeable = true;
+
+
+
+
+
+
+
 //Functions 
 
 // Set argument type in paramaters, 
