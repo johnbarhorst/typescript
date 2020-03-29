@@ -196,3 +196,20 @@ Maximuses.displayScore();
 const outputInput = <T>(arg: T): T => {
   return arg
 }
+
+//Duck type
+
+// Can auto complete through VScode magic the props from Human into Dancer
+class Dancer implements Human {
+  name: string;
+}
+
+let Lisa: Human = new Dancer();
+
+const info = {
+  name: 'Lisa',
+  age: 23
+}
+
+// Since info shares qualities of Human, TS inherits the typing of Human
+Lisa = info;

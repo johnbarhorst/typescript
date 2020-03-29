@@ -107,3 +107,17 @@ Maximuses.increaseScore();
 Maximuses.displayScore();
 Maximuses.increaseScore();
 Maximuses.displayScore();
+var outputInput = function (arg) {
+    return arg;
+};
+var Dancer = (function () {
+    function Dancer() {
+    }
+    return Dancer;
+}());
+var Lisa = new Dancer();
+var info = {
+    name: 'Lisa',
+    age: 23
+};
+Lisa = info;

@@ -273,6 +273,19 @@ Maximuses.displayScore();
 var outputInput = function outputInput(arg) {
   return arg;
 };
+
+var Dancer = function () {
+  function Dancer() {}
+
+  return Dancer;
+}();
+
+var Lisa = new Dancer();
+var info = {
+  name: 'Lisa',
+  age: 23
+};
+Lisa = info;
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -301,7 +314,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63394" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51786" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
