@@ -1,5 +1,5 @@
 // You can import and export interfaces and enum for reusability
-import EnumType, { Human } from './src/interfaces';
+import EnumType, { Human } from './interfaces';
 
 const isOpen: boolean = false;
 
