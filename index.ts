@@ -22,6 +22,7 @@ const profile: object = {
   phone: 6515552525,
 }
 
+
 // Variable variables and implicit types
 
 let lastName = 'Barhorst';
@@ -30,7 +31,7 @@ lastName = 'Anastasi';
 // TS knows the original was a string, so if you later try to assign it as a number
 // there will be an error.
 
-// lastName = 34;
+// lastName = 34; <-- causes an error, because original declaration was as a string.
 
 // Types can be inherited, no need to declare it here.
 let doppleganger = lastName;
@@ -42,15 +43,9 @@ let changeable: any = 'Steven McBadCode';
 changeable = 69;
 
 // Even better, set Union types
-
 let unionChangeable: string | number | boolean = 'Jimmy VonBetterOption';
 unionChangeable = 42;
 unionChangeable = true;
-
-
-
-
-
 
 
 //Functions 
@@ -68,3 +63,16 @@ const typedFunction = (string?: string): number => {
 const typedDefaultValue = function (string = 'Greetings!') {
   console.log(string);
 }
+
+// Union types as paramaters/arguments
+// can take multiple types of input
+const ageReport = (age: string | number): string => {
+  return `Subject is ${age} years old`;
+}
+
+// Null
+// Strings. Strings can be null or undefined.
+
+let stringNullUndefined: string = 'STRING!';
+stringNullUndefined = null; // No problem
+stringNullUndefined = undefined; // Go right ahead, I guess.

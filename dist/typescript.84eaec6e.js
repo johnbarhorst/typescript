@@ -130,7 +130,7 @@ var lastName = 'Barhorst';
 lastName = 'Anastasi';
 // TS knows the original was a string, so if you later try to assign it as a number
 // there will be an error.
-// lastName = 34;
+// lastName = 34; <-- causes an error, because original declaration was as a string.
 // Types can be inherited, no need to declare it here.
 var doppleganger = lastName;
 // doppleganger = 34;  <-- would cause an error, since lastName is an implicit string.
@@ -157,6 +157,16 @@ var typedDefaultValue = function typedDefaultValue(string) {
     }
     console.log(string);
 };
+// Union types as paramaters/arguments
+// can take multiple types of input
+var ageReport = function ageReport(age) {
+    return "Subject is " + age + " years old";
+};
+// Null
+// Strings. Strings can be null or undefined.
+var stringNullUndefined = 'STRING!';
+stringNullUndefined = null; // No problem
+stringNullUndefined = undefined; // Go right ahead, I guess.
 },{}],6:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
