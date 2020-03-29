@@ -190,3 +190,9 @@ Maximuses.displayScore();
 Maximuses.increaseScore();
 Maximuses.displayScore();
 
+// Generic Types 
+// put in angle brackets, T is just common, can be anything
+
+const outputInput = <T>(arg: T): T => {
+  return arg
+}

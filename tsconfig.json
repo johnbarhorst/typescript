@@ -1,4 +1,8 @@
 {
+  "compilerOptions": {
+    // Lots of options, get you some docs time
+    "removeComments": true,
+  },
   "include": [
     "./src/**/*"
   ],
