@@ -104,6 +104,9 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   // Override the current require with this new one
   return newRequire;
 })({4:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
 var isOpen = false;
 var firstName = 'John';
 var age = 38;
@@ -184,6 +187,15 @@ var returnDogStuff = function returnDogStuff(_a) {
         age = _a.age;
     return { name: name, age: age };
 };
+console.log(returnDogStuff({ age: 10, name: 'Maximus' }));
+// Interfaces can be imported and exported like components for reusability
+var shoutOutHuman = function shoutOutHuman(_a) {
+    var name = _a.name,
+        age = _a.age;
+    console.log("Hey " + name + "! You're " + age + "!");
+    return name;
+};
+console.log(shoutOutHuman({ name: 'John', age: 38 }));
 // ENUMS
 // Numeric Enum
 // Using Numeric Enum returns a number.

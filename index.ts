@@ -1,3 +1,6 @@
+// You can import and export interfaces and enum for reusability
+import EnumType, { Human } from './src/interfaces';
+
 const isOpen: boolean = false;
 
 const firstName: string = 'John';
@@ -96,11 +99,19 @@ shoutOutDog({
   name: 'Veyda',
   age: 12
 });
-
 // Can be used as the return types as well.
 const returnDogStuff = ({ name, age }: Dog): Dog => {
   return { name, age };
 }
+console.log(returnDogStuff({ age: 10, name: 'Maximus' }));
+
+// Interfaces can be imported and exported like components for reusability
+const shoutOutHuman = ({ name, age }: Human): string => {
+  console.log(`Hey ${name}! You're ${age}!`);
+  return name;
+}
+console.log(shoutOutHuman({ name: 'John', age: 38 }));
+
 
 // ENUMS
 
@@ -178,3 +189,4 @@ Maximuses.increaseScore();
 Maximuses.displayScore();
 Maximuses.increaseScore();
 Maximuses.displayScore();
+
