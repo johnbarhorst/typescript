@@ -186,6 +186,7 @@ var returnDogStuff = function returnDogStuff(_a) {
 };
 // ENUMS
 // Numeric Enum
+// Using Numeric Enum returns a number.
 var EnergyType;
 (function (EnergyType) {
     EnergyType[EnergyType["None"] = 0] = "None";
@@ -194,14 +195,29 @@ var EnergyType;
     EnergyType[EnergyType["Void"] = 3] = "Void"; // 3
 })(EnergyType || (EnergyType = {}));
 console.log(EnergyType.Solar); // Logs 2
+// contentType is just the paramater name, does not have to be specifically used like this.
 var useEnergyType = function useEnergyType(contentType) {
     console.log(contentType);
+    return contentType;
 };
-useEnergyType(EnergyType.Solar);
-useEnergyType(2);
+useEnergyType(EnergyType.Solar); // Logs 2
+useEnergyType(2); // Also logs 2, not Solar
 // String Enum
-var StringTypes;
-(function (StringTypes) {})(StringTypes || (StringTypes = {}));
+// Standard is all caps. Can then use methods to get into the case you want/
+var StringEnergyTypes;
+(function (StringEnergyTypes) {
+    StringEnergyTypes["None"] = "NONE";
+    StringEnergyTypes["Arc"] = "ARC";
+    StringEnergyTypes["Solar"] = "SOLAR";
+    StringEnergyTypes["Void"] = "VOID";
+})(StringEnergyTypes || (StringEnergyTypes = {}));
+var useStringEnergy = function useStringEnergy(energy) {
+    console.log(energy);
+    return energy;
+};
+useStringEnergy(StringEnergyTypes.None);
+// useStringEnergy('NONE'); This doesn't work like it does with number enums
+//  useStringEnergy(1); Nor does this.
 },{}],6:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

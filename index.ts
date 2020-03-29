@@ -134,6 +134,11 @@ enum StringEnergyTypes {
   Void = 'VOID'
 }
 
-const useStringEnergy = (energy: StringEnergyTypes) => {
-
+const useStringEnergy = (energy: StringEnergyTypes): string => {
+  console.log(energy);
+  return energy;
 }
+
+useStringEnergy(StringEnergyTypes.None);
+// useStringEnergy('NONE'); This doesn't work like it does with number enums
+//  useStringEnergy(1); Nor does this.
