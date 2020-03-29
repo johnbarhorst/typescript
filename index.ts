@@ -101,3 +101,39 @@ shoutOutDog({
 const returnDogStuff = ({ name, age }: Dog): Dog => {
   return { name, age };
 }
+
+// ENUMS
+
+// Numeric Enum
+// Using Numeric Enum returns a number.
+enum EnergyType {
+  None,  // 0
+  Arc,   // 1
+  Solar, // 2
+  Void   // 3
+}
+
+console.log(EnergyType.Solar); // Logs 2
+
+// contentType is just the paramater name, does not have to be specifically used like this.
+const useEnergyType = (contentType: EnergyType): number => {
+  console.log(contentType);
+  return contentType;
+}
+
+useEnergyType(EnergyType.Solar); // Logs 2
+useEnergyType(2); // Also logs 2, not Solar
+
+// String Enum
+
+// Standard is all caps. Can then use methods to get into the case you want/
+enum StringEnergyTypes {
+  None = 'NONE',
+  Arc = 'ARC',
+  Solar = 'SOLAR',
+  Void = 'VOID'
+}
+
+const useStringEnergy = (energy: StringEnergyTypes) => {
+
+}

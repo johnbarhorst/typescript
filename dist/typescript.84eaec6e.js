@@ -184,6 +184,24 @@ var returnDogStuff = function returnDogStuff(_a) {
         age = _a.age;
     return { name: name, age: age };
 };
+// ENUMS
+// Numeric Enum
+var EnergyType;
+(function (EnergyType) {
+    EnergyType[EnergyType["None"] = 0] = "None";
+    EnergyType[EnergyType["Arc"] = 1] = "Arc";
+    EnergyType[EnergyType["Solar"] = 2] = "Solar";
+    EnergyType[EnergyType["Void"] = 3] = "Void"; // 3
+})(EnergyType || (EnergyType = {}));
+console.log(EnergyType.Solar); // Logs 2
+var useEnergyType = function useEnergyType(contentType) {
+    console.log(contentType);
+};
+useEnergyType(EnergyType.Solar);
+useEnergyType(2);
+// String Enum
+var StringTypes;
+(function (StringTypes) {})(StringTypes || (StringTypes = {}));
 },{}],6:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
