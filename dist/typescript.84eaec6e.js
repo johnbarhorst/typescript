@@ -125,6 +125,23 @@ var profile = {
     name: 'John Barhorst',
     phone: 6515552525
 };
+// Variable variables and implicit types
+var lastName = 'Barhorst';
+lastName = 'Anastasi';
+// TS knows the original was a string, so if you later try to assign it as a number
+// there will be an error.
+// lastName = 34;
+// Types can be inherited, no need to declare it here.
+var doppleganger = lastName;
+// doppleganger = 34;  <-- would cause an error, since lastName is an implicit string.
+// IF YOU MUST ALLOW A VARIABLE TO CHANGE TYPE! (Pro tip, probably don't)
+// Use type of any
+var changeable = 'Steven McBadCode';
+changeable = 69;
+// Even better, set Union types
+var unionChangeable = 'Jimmy VonBetterOption';
+unionChangeable = 42;
+unionChangeable = true;
 //Functions 
 // Set argument type in paramaters, 
 // and set the return type after paramaters.
