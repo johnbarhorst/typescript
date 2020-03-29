@@ -76,3 +76,28 @@ const ageReport = (age: string | number): string => {
 let stringNullUndefined: string = 'STRING!';
 stringNullUndefined = null; // No problem
 stringNullUndefined = undefined; // Go right ahead, I guess.
+
+
+// Interfaces... named paramaters
+// interface is a typescript specific thing
+
+interface Dog {
+  name: string,
+  age?: number
+}
+
+const shoutOutDog = ({ name, age }: Dog): string => {
+  console.log(`Hey ${name}! You're ${age}!`);
+  return name;
+}
+
+// Now arguments can be passed in any order!
+shoutOutDog({
+  name: 'Veyda',
+  age: 12
+});
+
+// Can be used as the return types as well.
+const returnDogStuff = ({ name, age }: Dog): Dog => {
+  return { name, age };
+}

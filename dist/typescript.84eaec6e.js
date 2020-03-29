@@ -167,6 +167,23 @@ var ageReport = function ageReport(age) {
 var stringNullUndefined = 'STRING!';
 stringNullUndefined = null; // No problem
 stringNullUndefined = undefined; // Go right ahead, I guess.
+var shoutOutDog = function shoutOutDog(_a) {
+    var name = _a.name,
+        age = _a.age;
+    console.log("Hey " + name + "! You're " + age + "!");
+    return name;
+};
+// Now arguments can be passed in any order!
+shoutOutDog({
+    name: 'Veyda',
+    age: 12
+});
+// Can be used as the return types as well.
+var returnDogStuff = function returnDogStuff(_a) {
+    var name = _a.name,
+        age = _a.age;
+    return { name: name, age: age };
+};
 },{}],6:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
