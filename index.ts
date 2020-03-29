@@ -142,3 +142,39 @@ const useStringEnergy = (energy: StringEnergyTypes): string => {
 useStringEnergy(StringEnergyTypes.None);
 // useStringEnergy('NONE'); This doesn't work like it does with number enums
 //  useStringEnergy(1); Nor does this.
+
+
+// CLASSES
+
+class Team {
+  // Set a public constructor paramater that can be set from outside.
+  teamName: string;
+  // Can't be read from outside
+  private privates: string = 'These are unmentionable!';
+  // standard stuff
+  score: number = 0;
+  // Read only from outside
+  readonly description: string = 'This is THE team to be!';
+
+
+  constructor(teamName: string) {
+    this.teamName = teamName
+  }
+  increaseScore(): number {
+    return this.score += 1
+  }
+  displayScore(): number {
+    console.log(this.score);
+    return this.score;
+  }
+}
+
+const Maximuses = new Team('Maximuses');
+console.log(Maximuses.description); // Can still be read outside;
+// Maximuses.description = 'Greatest Moose Ever';  This can't be changed since it's read only
+// console.log(Maximuses.privates); // No can do!
+Maximuses.displayScore();
+Maximuses.increaseScore();
+Maximuses.displayScore();
+Maximuses.increaseScore();
+Maximuses.displayScore();

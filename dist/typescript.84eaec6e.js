@@ -218,6 +218,35 @@ var useStringEnergy = function useStringEnergy(energy) {
 useStringEnergy(StringEnergyTypes.None);
 // useStringEnergy('NONE'); This doesn't work like it does with number enums
 //  useStringEnergy(1); Nor does this.
+// CLASSES
+var Team = /** @class */function () {
+    function Team(teamName) {
+        // Can't be read from outside
+        this.privates = 'These are unmentionable!';
+        // standard stuff
+        this.score = 0;
+        // Read only from outside
+        this.description = 'This is THE team to be!';
+        this.teamName = teamName;
+    }
+    Team.prototype.increaseScore = function () {
+        return this.score += 1;
+    };
+    Team.prototype.displayScore = function () {
+        console.log(this.score);
+        return this.score;
+    };
+    return Team;
+}();
+var Maximuses = new Team('Maximuses');
+console.log(Maximuses.description); // Can still be read outside;
+// Maximuses.description = 'Greatest Moose Ever';  This can't be changed since it's read only
+// console.log(Maximuses.privates); // No can do!
+Maximuses.displayScore();
+Maximuses.increaseScore();
+Maximuses.displayScore();
+Maximuses.increaseScore();
+Maximuses.displayScore();
 },{}],6:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
