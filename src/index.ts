@@ -192,14 +192,26 @@ Maximuses.displayScore();
 
 // Generic Types 
 // put in angle brackets, T is just common, can be anything
+// Input equals the output.
 
+// Arrow Function
 const outputInput = <T>(arg: T): T => {
   return arg
 }
 
-//Duck type
+// Function Declaration
+function inputOutput<T>(arg: T): T {
+  return arg
+}
 
-// Can auto complete through VScode magic the props from Human into Dancer
+// This doesn't work. Catches if you could possibly pass something where the output would not be of the same type.
+// const outputNotInput = <T>(arg: T): T => {
+//   return !arg
+// }
+
+//Duck type
+// Implements the interface from our interfaces file.
+// Can auto complete through VScode magic the props from Human into Dancer.
 class Dancer implements Human {
   name: string;
 }
